@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+  <style>
+    .local {
+      height: 50px;
+      width: 150px;
+      border: 2px solid #f24;
+      background-color: aqua
+    }
+
+    .global {
+      height: 100px;
+      width: 250px;
+      border: 2px solid #777777;
+      background-color: rgb(219, 219, 219);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <h1>local component</h1>
+    <div class="local">
+      <local-component-a></local-component-a>
+      <local-component-b></local-component-b>
+    </div>
+    <h1>global component</h1>
+    <div class="global">
+      <components-a-part></components-a-part>
+      <components-b-part></components-b-part>
+      <components-c-part></components-c-part>
+    </div>
+  </div>
+</body>
+<script src="a.js"></script>
+<script src="b.js"></script>
+<script src="c.js"></script>
+<script type="module">
+
+
+  new Vue({
+    el: '#app',
+    data:{
+      message:"reverse message"
+    },
+    components: {
+    'localComponentA': {
+      template: '<div>localComponentA</div>',
+    },
+    'localComponentB': {
+      template: '<div>localComponentB</div>',
+    }
+  },
+})
+
+</script>
+
+</html>

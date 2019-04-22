@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+
+</head>
+<style>
+  .style1 {
+    color: aquamarine;
+    font-size: 10px;
+  }
+
+  .style2 {
+    color: #000;
+    font-size: 30px;
+  }
+</style>
+
+<body>
+  <div id="app">
+    <h1>v-model area</h1>
+    <input type="text" v-model="textvalue">
+    {{textvalue}}
+    <hr>
+    <h1>v-on:click area</h1>
+    <button @click="number += 1">go</button>
+    {{number}}
+    <hr>
+    <h1>v-if and v-bind</h1>
+    <div :style="customCss">
+      <ul>
+        <li v-for="item in list" v-if="item.age==23">
+          編號{{item.id}}
+          我是{{item.name}}
+          年齡{{item.age}}</li>
+      </ul>
+    </div>
+
+    <hr>
+  </div>
+</body>
+<script src="./vueProps.js"></script>
+
+</html>

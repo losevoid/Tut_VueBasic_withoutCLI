@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+
+</head>
+
+<body>
+  <div id="app">
+    <h1>computed area</h1>
+    數字1+數字2=結果
+    <br>
+    <input type="text" v-model="number1">+
+    <input type="text" v-model="number2">=
+    <input type="text" v-model="number3">
+    <br>
+    <h3>數字一是{{number1}}</h3>
+    <h3>數字二{{number2}}</h3>
+    <h1>有用computed</h1>
+    {{result}}
+    <h1>有用computed</h1>
+    <br>沒用
+
+    <hr>
+    <h1>watched area</h1>
+    <input type="text" v-model="num1">+
+    <input type="text" v-model="num2">=
+    <input type="text" v-model="num3">
+    <hr>
+    <h1>methods 計時器</h1>
+    <button @click="go">計時開始</button>
+    <button @click="stoptime">計時結束</button>
+    <br>
+    {{time}}
+  </div>
+</body>
+<script src="./vueThreeThings.js"></script>
+
+</html>
