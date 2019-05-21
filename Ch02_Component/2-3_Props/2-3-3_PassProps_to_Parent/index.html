@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <h1>2-6 傳送props到父組件</h1>
+    <!-- v-on 可以讓父組件監聽到 自訂事件my-click 執行clicked函式 -->
+    <my-component v-on:my-click="clicked"></my-component>
+    <h1>{{ parentcount }}</h1>
+  </div>
+</body>
+<script src="./component.js"></script>
+
+
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      parentcount: 0
+    },
+    methods: {
+      clicked(data) {
+        this.parentcount = data
+      }
+    }
+  })
+
+</script>
+
+</html>
