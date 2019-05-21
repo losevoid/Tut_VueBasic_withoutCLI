@@ -1,47 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
-</head>
+  <body>
+    <div id="app">
+      <h1>基本練習</h1>
+      <my-component v-bind:msg="msg" title="hello world"></my-component>
+      <hr />
+      <h1>動態綁定props</h1>
+      <!-- 第一種用法  post分別綁在屬於的attribute上面 -->
 
-<body>
-  <div id="app">
-    <h1>基本練習</h1>
-    <my-component v-bind:msg="msg" title="hello world"></my-component>
-    <hr>
-    <h1>動態綁定props</h1>
-    <!-- 第一種用法  post分別綁在屬於的attribute上面 -->
-
-    <!-- <post-com v-for="post in posts" :text="post.text" :author="post.author">
+      <!-- <post-com v-for="post in posts" :text="post.text" :author="post.author">
     </post-com> -->
-    <!-- 第二種用法 直接綁定在post上 可以直接把物件裡面屬性指定到component的props -->
-    <post-com v-for="post in posts" v-bind="post">
-    </post-com>
+      <!-- 第二種用法 直接綁定在post上 可以直接把物件裡面屬性指定到component的props -->
+      <post-com v-for="post in posts" v-bind="post"> </post-com>
+    </div>
+  </body>
+  <script src="./component.js"></script>
+  <script src="./post.js"></script>
 
-
-  </div>
-</body>
-<script src="./component.js"></script>
-<script src="./post.js"></script>
-
-
-<script>
-  new Vue({
-    el: '#app',
-    data: {
-      msg: "hello world!",
-      posts: [
-        { text: "今天天氣真好", author: "Kao" },
-        { text: "寫vue練習", author: "kevin" }
-      ]
-    }
-  })
-
-</script>
-
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        msg: "This is good Day",
+        posts: [
+          { text: "今天天氣真好", author: "Kao" },
+          { text: "寫vue練習", author: "kevin" }
+        ]
+      }
+    });
+  </script>
 </html>
