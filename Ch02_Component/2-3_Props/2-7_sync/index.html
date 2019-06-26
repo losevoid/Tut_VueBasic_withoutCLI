@@ -12,7 +12,6 @@
 <body>
   <div id="app">
     <h1>2-7 sync</h1>
-    <h1>燈亮好帥</h1>
     <my-component :clicked.sync="parentcount"></my-component>
     <h1>等同於</h1>
     <my-component :clicked="parentcount" @update:clicked="val=>parentcount = val">
